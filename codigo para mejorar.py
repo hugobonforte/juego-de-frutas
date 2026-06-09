@@ -10,18 +10,16 @@ reputacion = 5
 texto_amigo = "Robarle el dinero a tu amigo"
 texto_opcion = "Di :robar: para robar a su amigo o di :vender: para vender frutas en su emprendimiento "
 
-print(
-    "Reglas: Escribir justo como lo dice el bot osea si no tiene mayusculas escribelo sin mayus, Tambien en este juego pasan cosas segun tu suerte osea: Random ")
-time.sleep(6)
+time.sleep(1)
 Nombre = input("¿Cual es tu nombre? ")
 
 while True:
     print(
         "hola",
         Nombre,
-        "este programa es simple voy a actualizar este juego ademas de eso vas a tener opciones, este es tu Dinero:",
+        "este es tu Dinero:",
         monedas,
-        "esta es tu reputacion",
+        "y esta es tu reputacion",
         reputacion,
         "\n Estas vendiendo frutas",
     )
@@ -31,7 +29,7 @@ while True:
     print(
         "puedes \n",
         texto_amigo,
-        "\n Vender frutas en tu nuevo emprendimiento donde vendes frutas en el cual gastaste 100 monedas",
+        "\n Vender frutas en tu nuevo emprendimiento donde vendes frutas en el cual gastaste 100 pesos",
     )
     elige = input(texto_opcion)
 
@@ -49,7 +47,7 @@ while True:
 
     time.sleep(1)
 
-    elige_random = random.randint(1, 5)
+    elige_random = random.randint(1, 6)
     clientes = random.randint(1, 8)
     clientes1 = random.randint(20, 30)
     clientes2 = random.randint(10, 20)
@@ -66,12 +64,11 @@ while True:
             clientes1,
             " clientes este dia y solo es el primero ganaste",
             monedas1,
-            "monedas, Monedas:",
+            "monedas, tus monedas ahora son:",
             monedas,
             "ademas tu reputacion subio un",
             reputacion1,
             ",de reputacion:",
-            reputacion,
         )
 
     elif elige == "vender" and clientes >= 4 and clientes <= 6:
@@ -82,12 +79,11 @@ while True:
             clientes2,
             "clientes este dia y solo es el primero igual no es tanto es poco, ganaste",
             monedas2,
-            "monedas, tus Monedas:",
+            "monedas, tus monedas ahora son:",
             monedas,
             "ademas tu reputacion subio un",
             reputacion1,
             "de reputacion:",
-            reputacion,
         )
 
     elif elige == "vender" and clientes >= 7 and clientes <= 8:
@@ -98,12 +94,11 @@ while True:
             clientes2,
             "no es tanto es muy poco, ganaste",
             monedas3,
-            "monedas, tus Monedas:",
+            "monedas, tus monedas ahora son:",
             monedas,
             "ademas tu reputacion subio un",
             reputacion1,
             "de reputacion:",
-            reputacion,
         )
 
     if (
@@ -117,7 +112,7 @@ while True:
         print(
             "Te encontraron quedas arrestado Estas arrestado por 30 segundos Si esperas podras seguir el juego"
         )
-        time.sleep(15)
+        time.sleep(24)
         print("Cargando.")
         time.sleep(1)
         print("Cargando..")
@@ -132,20 +127,20 @@ while True:
         monedas -= 50
         reputacion -= 5
         print(
-            "Has salido de tu condena pero como castigo tienes una deuda de 50 dolares Ademas tu amigo te abandono y ademas has perdido 5 de reputacion",
+            "Has salido de tu condena pero como castigo tienes una deuda de 50 pesos ademas tu amigo te abandono y has perdido 5 de reputacion",
             reputacion,
             " Ahora tus monedas son",
             monedas,
         )
         texto_amigo = "Robarle el dinero a un desconocido en la calle"
-        texto_opcion = "Diga :robar: para robar a un desconocido o diga :vender: para vender frutas en su emprendimiento "
+        texto_opcion = "Di :robar: para robar a un desconocido o di :vender: para vender frutas en su emprendimiento "
 
     elif (
-        elige == "robar" and elige_random == 5 or elige == "robar" and elige_random == 4
+        elige == "robar" and elige_random == 6 or elige == "robar" and elige_random == 5 or elige == "robar" and elige_random == 4
     ):
         monedas += 50
         print(
-            "Uffff has tenido suerte no te han pillado!!! Con eso me referia a suerte, ahora tus monedas son",
+            "Uffff has tenido suerte no te han encontrado!!! Con eso me referia a suerte, ahora tus monedas son",
             monedas,
         )
 
