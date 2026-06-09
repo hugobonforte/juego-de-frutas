@@ -13,18 +13,19 @@ texto_opcion = "Di :robar: para robar a su amigo o di :vender: para vender fruta
 time.sleep(1)
 Nombre = input("¿Cual es tu nombre? ")
 
-while True:
-    print(
-        "hola",
-        Nombre,
-        "este es tu Dinero:",
-        monedas,
-        "y esta es tu reputacion",
-        reputacion,
-        "\n Estas vendiendo frutas",
-    )
+print(
+    "hola",
+    Nombre,
+    "este es tu Dinero:",
+    monedas,
+    "y esta es tu reputacion",
+    reputacion,
+    "\n Estas vendiendo frutas",
+)
 
-    time.sleep(6)
+while True:
+
+    time.sleep(2.5)
 
     print(
         "puedes \n",
@@ -57,6 +58,9 @@ while True:
     reputacion1 = random.randint(1, 5)
 
     if elige == "vender" and clientes >= 1 and clientes <= 3:
+        if reputacion > 15:
+            monedas1 += 5
+            print("¡Por tu buena reputacion la gente te pago 5 monedas extra!")
         monedas += monedas1
         reputacion += 2
         print(
@@ -68,10 +72,14 @@ while True:
             monedas,
             "ademas tu reputacion subio un",
             reputacion1,
-            ",de reputacion:",
+            ",de reputacion ahora tienes:",
+            reputacion,
         )
 
     elif elige == "vender" and clientes >= 4 and clientes <= 6:
+        if reputacion > 15:
+            monedas2 += 5
+            print("¡Por tu buena reputacion la gente te pago 5 monedas extra!")
         monedas += monedas2
         reputacion += reputacion1
         print(
@@ -83,11 +91,15 @@ while True:
             monedas,
             "ademas tu reputacion subio un",
             reputacion1,
-            "de reputacion:",
+            "de reputacion ahora tienes:",
+            reputacion,
         )
 
     elif elige == "vender" and clientes >= 7 and clientes <= 8:
-        monedas += monedas2
+        if reputacion > 15:
+            monedas3 += 5
+            print("¡Por tu buena reputacion la gente te pago 5 monedas extra!")
+        monedas += monedas3
         reputacion += reputacion1
         print(
             "Tu negocio le fue muy mal obtuviste ",
@@ -98,7 +110,8 @@ while True:
             monedas,
             "ademas tu reputacion subio un",
             reputacion1,
-            "de reputacion:",
+            "de reputacion ahora tienes:",
+            reputacion,
         )
 
     if (
@@ -136,7 +149,12 @@ while True:
         texto_opcion = "Di :robar: para robar a un desconocido o di :vender: para vender frutas en su emprendimiento "
 
     elif (
-        elige == "robar" and elige_random == 6 or elige == "robar" and elige_random == 5 or elige == "robar" and elige_random == 4
+        elige == "robar"
+        and elige_random == 6
+        or elige == "robar"
+        and elige_random == 5
+        or elige == "robar"
+        and elige_random == 4
     ):
         monedas += 50
         print(
@@ -145,7 +163,16 @@ while True:
         )
 
     if monedas >= 500:
+        print(
+            "¡Felicidades! Has alcanzado las 500 monedas y has ganado el juego. ¡Eres un exitoso emprendedor de frutas!"
+        )
         break
 
     if monedas <= -150:
+        print(
+            "Has caído en una gran deuda y has perdido el juego. ¡Mejor suerte la próxima vez!"
+        )
         break
+
+
+
